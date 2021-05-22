@@ -76,15 +76,35 @@ function restart_level()
     load_level(current_level)
 end
 
--- TODO level generator from tiles => make horizontal blocks
-
 function gen_level(i)
     local lmap = levels[i].map
     for i=lmap.x,lmap.x + 15 do
+        local last_rect = nil
+        local last_block = nil
         for y=lmap.y,lmap.y + 15 do
-            if mget(i, y) == 1 then create(rectangle, i*8 - lmap.x*8, y*8 - lmap.y*8) end
-            if mget(i, y) == 6 then create(block, i*8 - lmap.x*8, y*8 - lmap.y*8) end
+            --
+            if mget(i, y) == 1 then
+                if last_rect != nil then
+                    last_rect.hit_h += 8
+                else
+                    last_rect = create(rectangle, i*8 - lmap.x*8, y*8 - lmap.y*8)
+                end
+            else
+                last_rect = nil
+            end
+            --
+            if mget(i, y) == 6 then
+                if last_block then
+                    last_block.hit_h += 8
+                else
+                    last_block = create(block, i*8 - lmap.x*8, y*8 - lmap.y*8)
+                end
+            else
+                last_block = nil
+            end
+            --
             if mget(i, y) == start_spr then current_player = create(player, i*8 - lmap.x*8, y*8 - lmap.y*8) end
+            --
             if mget(i, y) == exit_spr then current_exit = create(exit, i*8 - lmap.x*8, y*8 - lmap.y*8) end
         end
     end

@@ -12,7 +12,6 @@ player.moved = false
 
 -- TODO add particules on win / death / movement
 -- TODO Musics / Mix
--- TODO controls with mouse too
 function player.init(self)
     self.points = {}
     
