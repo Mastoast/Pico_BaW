@@ -11,7 +11,7 @@ function _init()
     shake = 0
     infade = 0
     fade_time = 40
-    current_level = 7
+    current_level = 1
     printable = nil
     load_level(current_level)
 end
@@ -80,7 +80,7 @@ function _draw()
     -- borders
     rect(0, 0, 127, 127, 7)
     
-    print(printable, 80, 120, 4)
+    --print(printable, 80, 120, 4)
 end
 
 function draw_cursor()
