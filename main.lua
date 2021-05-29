@@ -73,7 +73,7 @@ function _draw()
 
     -- draw fades
     if infade != fade_time then
-        circfill(current_player.x + current_player.hit_w/2, current_player.y + current_player.hit_h/2, 360 * (1 - infade/fade_time), 6)
+        circfill(current_player.x + current_player.hit_w/2, current_player.y + current_player.hit_h/2, 360 * (1 - infade/fade_time), 7)
         circfill(current_player.x + current_player.hit_w/2, current_player.y + current_player.hit_h/2, 180 * (1 - infade/fade_time), 0)
     end
 
