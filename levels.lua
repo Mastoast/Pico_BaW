@@ -75,6 +75,14 @@ levels = {
             rect4.update = update_rotate
         end
     },
+    {
+        map = {x = 0, y = 16},
+        shots = 99,
+        texts = {
+            {text = "congratulation", y = 5, color = 7},
+            {text = "you beat the game", y = 15, color = 7},
+            {text = "thank you for playing !", y = 120, color = 7}}
+    }
 }
 
 function load_level(i)
