@@ -13,7 +13,8 @@ levels = {
         map = {x = 16, y = 0},
         shots = 2,
         texts = {
-            {text="avoid obstacles", y = 10, color = 7}}
+            {text="you can't add points", y = 6, color = 7},
+            {text="once you started to move", y = 14, color = 7}}
     },
     {
         map = {x = 32, y = 0},
@@ -25,17 +26,14 @@ levels = {
     {
         map = {x = 48, y = 0},
         shots = 3,
-        texts = {{text="you can't move your points", y = 14, color = 0},
-                {text="once you started to move", y = 6, color = 0},
+        texts = {{text="once you moved", y = 6, color = 0},
+                {text="press 🅾️ to restart", y = 14, color = 0},
                 {text="stay in the path", y = 110, color = 0}}
     },
     {
         map = {x = 64, y = 0},
         shots = 3,
-        texts = {
-            {text="once you moved", y = 90, color = 0},
-            {text="press 🅾️ to", y = 98, color = 0},
-            {text="restart", y = 106, color = 0}},
+        texts = {{text="avoid obstacles", y = 95, color = 0}},
         init = function()
             local rect1 = create(rectangle, 3*8, 5*8, 8, 40)
             rect1.update = update_move_y

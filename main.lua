@@ -1,5 +1,4 @@
 -- TODO menu screen
--- TODO tuto
 
 function _init()
     -- enable mouse
