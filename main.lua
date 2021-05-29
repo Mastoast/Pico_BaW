@@ -12,7 +12,7 @@ function _init()
     shake = 0
     infade = 0
     fade_time = 40
-    current_level = 4
+    current_level = 7
     printable = nil
     load_level(current_level)
 end
@@ -62,9 +62,15 @@ function _draw()
     -- draw player last
 	if ply then ply:draw() end
 
+    -- draw level text
+    if levels[current_level].texts and ply.state < 2 then
+        for item in all(levels[current_level].texts) do
+            print_centered(item.text, 0, item.y, item.color)
+        end
+    end
+
     -- draw cursor
     draw_cursor()
-    -- draw points left
 
     -- draw fades
     if infade != fade_time then
@@ -92,4 +98,9 @@ end
 -- linear interpolation
 function lerp(start,finish,t)
     return mid(start,start*(1-t)+finish*t,finish)
+end
+
+-- print at center
+function print_centered(str, offset_x, y, col)
+    print(str, 64 - (#str * 2) + offset_x, y, col)
 end

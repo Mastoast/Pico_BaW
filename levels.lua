@@ -4,23 +4,38 @@ exit_spr = 19
 levels = {
     {
         map = {x = 0, y = 0},
-        shots = 1
+        shots = 1,
+        texts = {
+            {text="press 🅾️ to place waypoints", y = 15, color = 7},
+            {text="press ❎ to dash", y = 30, color = 7}}
     },
     {
         map = {x = 16, y = 0},
-        shots = 2
+        shots = 2,
+        texts = {
+            {text="avoid obstacles", y = 10, color = 7}}
     },
     {
         map = {x = 32, y = 0},
-        shots = 3
+        shots = 3,
+        texts = {
+            {text="press 🅾️ on the last", y = 110, color = 0},
+            {text="point to remove it", y = 118, color = 0}}
     },
     {
         map = {x = 48, y = 0},
-        shots = 3
+        shots = 3,
+        texts = {{text="you can't move your points", y = 14, color = 0},
+                {text="once you started to move", y = 6, color = 0},
+                {text="stay in the path", y = 110, color = 0}}
     },
     {
         map = {x = 64, y = 0},
         shots = 3,
+        texts = {
+            {text="once you moved", y = 90, color = 0},
+            {text="press 🅾️ to", y = 98, color = 0},
+            {text="restart", y = 106, color = 0}},
         init = function()
             local rect1 = create(rectangle, 3*8, 5*8, 8, 40)
             rect1.update = update_move_y
@@ -43,6 +58,9 @@ levels = {
     {
         map = {x = 96, y = 0},
         shots = 10,
+        texts = {
+            {text="get the timing", y = 14, color = 0},
+            {text="get the timing", y = 110, color = 0}},
         init = function()
             local rect1 = create(rectangle, 13*8, 1*8, 16, 16)
             rect1.update = update_rotate
